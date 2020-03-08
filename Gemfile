@@ -1,4 +1,17 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in Race_5k.gemspec
-gemspec
+gem 'sinatra'
+gem 'activerecord', '4.2.5'
+gem 'sinatra-activerecord'
+gem 'thin'
+gem 'require_all'
+gem 'bcrypt'
+gem 'rack-flash3'
+
+group :development do
+    gem 'shotgun'
+    gem 'pry'
+    gem 'tux'
+    gem 'sqlite3'
+end
+
