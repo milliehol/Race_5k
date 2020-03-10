@@ -1,0 +1,6 @@
+<h1>5k Races</h1>
+
+  <ul><% @race.each do |race| %>
+    <li>"<%= race.comments %>" -<a href="/users/<%= race.user.slug %>"><%= race.user.username %></a><br>
+    At <a href="/locations/<%= race.cities.slug %>"><%= race.cities.name %></a></li>
+    <% end %></ul>
