@@ -1,0 +1,18 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
+<h2><%= @race.user.name %>'s race:</h2>
+<%= @race.type %> race from <%= @race.time %> at <%= @race.city.name %></a><br>
+    "<%= @race.food %>"<br>
+
+<br></br>
+
+<a href="/racess/<%= @race.id %>/edit">Edit Race</a>
+
+<br></br>
+
+  <form action="/races/<%= @race.id %>" method="post">
+    <input type="hidden" id="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Race">
+  </form>
