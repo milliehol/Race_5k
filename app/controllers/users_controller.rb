@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   get '/login' do
     if is_logged_in?
-      redirect '/race'
+      redirect '/races'
     else
       erb :'users/login'
     end
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect '/race'
+      redirect '/races'
     else
       flash[:message] = "Invalid username or password."
       redirect '/login'
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   get '/signup' do
     if is_logged_in?
-      redirect '/race'
+      redirect '/races'
     else
       erb :'users/new'
     end
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     binding.pry
     if @user.save
       session[:user_id] = @user.id
-      redirect '/race'
+      redirect '/races'
     else
       flash[:message] = @user.errors.full_messages.join(", ")
       redirect '/signup'
