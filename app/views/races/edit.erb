@@ -1,0 +1,16 @@
+<h1>Edit your race here</h1>
+
+<form action="/races/<%= @race.id %>" method="post">
+  <label for="kind">Kind*</label>
+  <input type="text" name="kind" value="<%= @race.kind %>">
+  <br></br>
+  <label for="kind">Height*</label>
+  <input type="text" name="height" value="<%= @race.height %>">
+  <br></br>
+  <label for="comments">Comments</label>
+  <input type="text" name="comments" value="<%= @race.comments %>">
+  <br></br>
+  *Required fields
+  <br></br>
+  <input type="submit" id="submit" value="Edit Race">
+</form>
