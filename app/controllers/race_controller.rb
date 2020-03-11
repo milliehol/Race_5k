@@ -2,7 +2,7 @@ class RaceController < ApplicationController
 
   get '/races' do
     if is_logged_in?
-      @race = Race.all
+      @races = Race.all
       erb :'races/index'
     else
       redirect '/'
@@ -20,8 +20,8 @@ class RaceController < ApplicationController
 
   post '/races' do
     @user = User.find(session[:user_id])
-    @race = @user.race.build(params[:race])
-    if params[:race][:race_id] == nil
+    @race = @user.races.build(params[:race])
+    if params[:race][:city_id] == nil
       city = City.create(params[:city])
       @race.city_id = city.id
     end
