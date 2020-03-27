@@ -1,6 +1,6 @@
 class CreateRaces < ActiveRecord::Migration[5.0]
   def change
-      create_table :racess do |t|
+      create_table :races do |t|
       t.integer :user_id
       t.integer :city_id
       t.string :type
