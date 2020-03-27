@@ -6,6 +6,6 @@ end
 
 use Rack::MethodOverride
 use UsersController
-use CityController
-use RaceController
+use CitiesController
+use RacesController
 run ApplicationController
