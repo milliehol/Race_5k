@@ -1,4 +1,4 @@
-class RaceController < ApplicationController
+class RacesController < ApplicationController
 
   get '/races' do
     if is_logged_in?
