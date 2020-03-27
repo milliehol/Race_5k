@@ -1,4 +1,4 @@
-class Location < ActiveRecord::Base
+class City < ActiveRecord::Base
   has_many :races
   has_many :users, through: :races
   validates_presence_of :name, :state
