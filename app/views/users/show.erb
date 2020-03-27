@@ -9,7 +9,7 @@
 
   <h3>Races</h3>
   <ol><% @user.races.each do |race| %>
-    <li><%= race.type %> race ran within <%= race.time %> minutes at <a href="/locations/<%= race.city.slug %>"><%= race.city.name %></a><br>
+    <li><%= race.date %> race ran within <%= race.time %> minutes at <a href="/locations/<%= race.city.slug %>"><%= race.city.name %></a><br>
       "<%= race.food %>"</li>
       <a href="/races/<%= race.id %>">Edit or delete</a>
     <% end %></ol>
