@@ -82,7 +82,7 @@ class RacesController < ApplicationController
 
   post '/races/:id' do
     @race = Race.find(params[:id])
-    @race.update(type: params[:type], time: params[:time], food: params[:food])
+    @race.update(date: params[:date], time: params[:time], food: params[:food])
     flash[:message] = "Successfully updated race."
     redirect "/users/#{@race.user.slug}"
   end
