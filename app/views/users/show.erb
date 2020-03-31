@@ -3,13 +3,12 @@
 <% end %>
 
 <h1><%= @user.name %><h1>
-  <h2><%= @user.username %></h2>
 
   <br></br>
 
-  <h3>Races</h3>
+  <h3>5k Races</h3>
   <ol><% @user.races.each do |race| %>
-    <li><%= race.date %> race ran within <%= race.time %> minutes at <a href="/locations/<%= race.city.slug %>"><%= race.city.name %></a><br>
-      "<%= race.food %>"</li>
+    <li>I ran a 5k race on <%= race.date %> within <%= race.time %> minutes at <a href="/locations/<%= race.city.slug %>"><%= race.city.name %></a><br>
+      I received <%= race.food %> at the end of the race.</li>
       <a href="/races/<%= race.id %>">Edit or delete</a>
     <% end %></ol>
