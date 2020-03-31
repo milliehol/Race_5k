@@ -2,7 +2,7 @@
   <%= flash[:message] %>
 <% end %>
 
-<h1>Add a new race here</h1>
+<h1>Add a new 5k Race</h1>
 
 <form action="/races" method="post">
   <label for="date">When did you run this race?*</label>
@@ -14,14 +14,14 @@
   <label for="food">What food was served?</label>
   <input type="text" name="race[food]">
   <br></br>
-  <h3>Where?*</h3>
-  <label for="city">Choose a city</label>
+  <h3>Where did you run?*</h3>
+  <label for="city">Choose a city:</label>
   <br></br>
   <% @cities.each do |city| %>
     <input type="radio" name="race[city_id]" value="<%= city.id %>"><%= city.name %>
   <% end %>
   <br></br>
-  <label for="new_city">Or create a new one</label>
+  <label for="new_city">If your city is not listed, add a new one:</label>
   <br></br>
   City: <input type="text" name="city[name]">
   State: <input type="text" name="city[state]">
