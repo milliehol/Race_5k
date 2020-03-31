@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20200327180509) do
     t.integer "user_id"
     t.integer "city_id"
     t.date    "date"
-    t.time    "time"
+    t.integer "time"
     t.string  "food"
   end
 
