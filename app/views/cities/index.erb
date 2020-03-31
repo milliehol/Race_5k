@@ -1,5 +1,5 @@
 <h1>Cities</h1>
 
-<ul><% @cities.each do |city| %>
-  <li><a href="/cities/<%= city.slug %>"><%= city.name %></a>, <%= city.state %></li>
+<ul class="text-center"><% @cities.each do |city| %>
+  <li><%= city.name %>, <%= city.state %></li>
   <% end %></ul>
