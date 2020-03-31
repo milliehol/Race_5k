@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>5k Race Tracker</title>
   </head>
-  <body>
+ <center><body>
     <% if is_logged_in? %>
       <a href="/races">All Races</a>&nbsp
       <a href="/races/new">Add a Race</a>&nbsp
@@ -14,5 +14,5 @@
       <% end %>
     <br></br>
     <%= yield %>
-  </body>
+  </body></center>
 </html>
