@@ -4,7 +4,7 @@ class CreateRaces < ActiveRecord::Migration[5.0]
       t.integer :user_id
       t.integer :city_id
       t.date :date
-      t.time :time
+      t.integer :time
       t.string :food
     end
   end
