@@ -2,11 +2,7 @@
   <%= flash[:message] %>
 <% end %>
 
-<h1><%= @user.name %><h1>
-
-  <br></br>
-
-  <h3>5k Races</h3>
+  <h1><%= @user.name %>' s 5k Races</h1>
   <ol><% @user.races.each do |race| %>
     <li>I ran a 5k race on <%= race.date %> within <%= race.time %> minutes at <a href="/locations/<%= race.city.slug %>"><%= race.city.name %></a><br>
       I received <%= race.food %> at the end of the race.</li>
