@@ -72,7 +72,7 @@ class RacesController < ApplicationController
     end
     if @race.valid?
       @race.save
-      flash[:message] = "Successfully posted race."
+      flash[:message] = "Successfully added race."
       redirect "/users/#{@user.slug}"
     else
       flash[:message] = "Race was invalid. Please try again."

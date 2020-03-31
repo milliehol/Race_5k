@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if is_logged_in?
       session.clear
     end
-    redirect '/login'
+    redirect '/'
   end
 
   get '/signup' do
