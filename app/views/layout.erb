@@ -6,10 +6,10 @@
   </head>
   <body>
     <% if is_logged_in? %>
-      <a href="/races">Races</a>
-      <a href="/races/new">Add a Race</a>
-      <a href="/cities">Cities</a>
-      <a href="/users/<%= current_user.slug %>">Your Races</a>
+      <a href="/races">All Races</a><br>
+      <a href="/races/new">Add a Race</a><br>
+      <a href="/cities">All Cities</a><br>
+      <a href="/users/<%= current_user.slug %>">My Races</a><br>
       <a href="/logout">Logout</a>
       <% end %>
     <br></br>
