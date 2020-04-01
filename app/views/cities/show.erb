@@ -3,7 +3,12 @@
   <br></br>
 
   <h3>Races within <%= @city.name %>:</h3>
+   <form action="/cities/<%= @city.id %>" method="post">
+    <input type="hidden" id="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete City">
+    </form>
   <% @city.races.each do |race| %>
     "<%= race.food %>" -<a href="/users/<%= race.user.slug %>"><%= race.user.username %></a><br>
     <%= race.date %>, <%= race.time %> minutes<br>
+  
     <% end %>

@@ -18,23 +18,6 @@ class RacesController < ApplicationController
     end
   end
 
-  post '/races' do
-    @user = User.find(session[:user_id])
-    @race = @user.races.build(params[:race])
-    if params[:race][:city_id] == nil
-      city = City.create(params[:city])
-      @race.city_id = city.id
-    end
-    if @race.valid?
-      @race.save
-      flash[:message] = "Successfully added race."
-      redirect "/users/#{@user.slug}"
-    else
-      flash[:message] = "Race was invalid. Please try again."
-      redirect '/races/new'
-    end
-  end
-
   get '/races/:id' do
     if is_logged_in?
       @race = Race.find(params[:id])
@@ -66,7 +49,7 @@ class RacesController < ApplicationController
 #adds new race per user
   post '/races' do
     @user = User.find(session[:user_id])
-    @race = @user.race.build(params[:race])
+    @race = @user.races.build(params[:race])
     if params[:race][:city_id] == nil
       city = City.create(params[:city])
       @race.city_id = city.id

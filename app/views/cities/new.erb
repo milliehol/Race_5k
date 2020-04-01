@@ -1,0 +1,17 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
+<center><h2>Add a new city</h2>
+
+<form action="/cities" method="post">
+
+  <label for="new_city">Add a new city:</label>
+  <br></br>
+  City: <input type="text" name="city[name]">
+  State: <input type="text" name="city[state]">
+  <br></br>
+  *Required fields
+  <br></br>
+  <input type="submit" id="submit" value="Add City">
+</form></center>

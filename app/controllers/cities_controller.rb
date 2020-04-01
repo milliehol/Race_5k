@@ -9,6 +9,41 @@ class CitiesController < ApplicationController
       redirect '/'
     end
   end
+  
+   get '/cities/new' do
+    if is_logged_in?
+      @cities = City.all
+      erb :'cities/new'
+    else
+      redirect '/'
+    end
+  end
+  
+  post '/cities' do
+    @user = User.find(session[:user_id])
+    @race = @user.races.build(params[:race])
+    if params[:city][:name] != nil
+      city = City.create(params[:city])
+      @race.city_id = city.id
+      @race.save
+      flash[:message] = "Successfully added race."
+      redirect "/cities"
+    else
+      flash[:message] = "Race was invalid. Please try again."
+      redirect '/cities/new'
+    end
+  end
+  
+#deletes race only if user is logged in
+  delete '/cities/:id' do
+    @city = City.find(params[:id])
+    @user = @city.race.user
+    if is_logged_in? && current_user == @city.race.user
+      @city.destroy
+      flash[:message] = "Successfully deleted city."
+    end
+    redirect "/cities"
+  end
 
 #displays all races by city if logged in
   get '/cities/:slug' do
@@ -19,4 +54,5 @@ class CitiesController < ApplicationController
       redirect '/'
     end
   end
+  
 end
