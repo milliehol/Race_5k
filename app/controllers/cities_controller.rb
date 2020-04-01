@@ -21,11 +21,9 @@ class CitiesController < ApplicationController
   
   post '/cities' do
     @user = User.find(session[:user_id])
-    @race = @user.races.build(params[:race])
-    if params[:city][:name] != nil
-      city = City.create(params[:city])
-      @race.city_id = city.id
-      @race.save
+    @city = @user.cities.build(params[:city])
+    if @city.valid?
+      @city.save
       flash[:message] = "Successfully added race."
       redirect "/cities"
     else
@@ -37,8 +35,8 @@ class CitiesController < ApplicationController
 #deletes race only if user is logged in
   delete '/cities/:id' do
     @city = City.find(params[:id])
-    @user = @city.race.user
-    if is_logged_in? && current_user == @city.race.user
+    @user = @city.user
+    if is_logged_in? && current_user == @city.user
       @city.destroy
       flash[:message] = "Successfully deleted city."
     end
