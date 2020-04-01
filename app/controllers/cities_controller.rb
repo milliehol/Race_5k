@@ -10,12 +10,12 @@ class CitiesController < ApplicationController
     end
   end
 
-  #get '/cities/:slug' do
-    #if is_logged_in?
-     # @city = City.find_by_slug(params[:slug])
-      #erb :'cities/show'
-    #else
-      #redirect '/'
-    #end
-  #end
+  get '/cities/:slug' do
+    if is_logged_in?
+     @city = City.find_by_slug(params[:slug])
+      erb :'cities/show'
+    else
+      redirect '/'
+    end
+  end
 end
