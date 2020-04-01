@@ -10,6 +10,7 @@ class CitiesController < ApplicationController
     end
   end
 
+#displays all races by city if logged in
   get '/cities/:slug' do
     if is_logged_in?
      @city = City.find_by_slug(params[:slug])

@@ -27,7 +27,7 @@ class RacesController < ApplicationController
     end
     if @race.valid?
       @race.save
-      flash[:message] = "Successfully posted race."
+      flash[:message] = "Successfully added race."
       redirect "/users/#{@user.slug}"
     else
       flash[:message] = "Race was invalid. Please try again."
@@ -63,6 +63,7 @@ class RacesController < ApplicationController
     end
   end
   
+#adds new race per user
   post '/races' do
     @user = User.find(session[:user_id])
     @race = @user.race.build(params[:race])
@@ -80,6 +81,7 @@ class RacesController < ApplicationController
     end
   end
 
+#updates race if logged in
   post '/races/:id' do
     @race = Race.find(params[:id])
     @race.update(date: params[:date], time: params[:time], food: params[:food])
@@ -87,6 +89,7 @@ class RacesController < ApplicationController
     redirect "/users/#{@race.user.slug}"
   end
 
+#deletes race only if user is logged in
   delete '/races/:id' do
     @race = Race.find(params[:id])
     @user = @race.user

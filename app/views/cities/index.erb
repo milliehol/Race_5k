@@ -2,11 +2,6 @@
 
 <ul class="text-center"><% @cities.each do |city| %>
 
-  <li><%= city.name %>, <%= city.state %></li>
-  <%@cities.race.each do |r|%>
-  <%if city.city_id == r.city_id%>
-    <h4><%=r.food%></h4></a>
-  <%end%>
-  <%end%>
+  <li><a href="/cities/<%= city.slug %>"><%= city.name %></a>, <%= city.state %></li>
 
 <% end %></ul>

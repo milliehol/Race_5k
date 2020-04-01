@@ -1,0 +1,9 @@
+
+
+  <br></br>
+
+  <h3>Races within <%= @city.name %>:</h3>
+  <ul><% @city.races.each do |race| %>
+    <li>"<%= race.food %>" -<a href="/users/<%= race.user.slug %>"><%= race.user.username %></a><br>
+    <%= race.date %>, <%= race.time %> minutes</li>
+    <% end %></ul>
