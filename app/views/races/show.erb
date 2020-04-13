@@ -2,9 +2,9 @@
   <%= flash[:message] %>
 <% end %>
 
-<h2><%= @race.user.name%>'s race:</h2>
-<%= @race.name %> race ran in <%= @race.time %>minutes at <%= @race.city.name %> on <%= @race.date %></a><br>
-    "<%= @race.food %> was served and <%= @race.clothing %> were provided."<br>
+<h2><%= @race.user.name%>'s Races:</h2>
+<%= @race.name %> 5k race ran in <%= @race.time %> minutes in <%= @race.city.name %>, <%= @race.city.state %>.<br>
+    <%= @race.food %> were served and <%= @race.clothing %> was provided.<br>
 
 <br></br>
 
