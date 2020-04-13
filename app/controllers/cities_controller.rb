@@ -32,16 +32,6 @@ class CitiesController < ApplicationController
     end
   end
   
-#deletes race only if user is logged in
-  delete '/cities/:id' do
-    @city = City.find(params[:id])
-    @user = @city.user
-    if is_logged_in? && current_user == @city.user
-      @city.destroy
-      flash[:message] = "Successfully deleted city."
-    end
-    redirect "/cities"
-  end
 
 #displays all races by city if logged in
   get '/cities/:slug' do

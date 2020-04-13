@@ -2,12 +2,9 @@
 
   <br></br>
 
-  <h3>Races within <%= @city.name %>:</h3>
-   <form action="/cities/<%= @city.id %>" method="post">
-    <input type="hidden" id="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete City">
-    </form>
+  <h3>Races within <%= @city.name %>, <%= @city.state %>:</h3>
+  
   <% @city.races.each do |race| %>
-    "<%= race.name %>" -<a href="/users/<%= race.user.slug %>"><%= race.user.username %></a><br>
-    <%= race.date %>, <%= race.time %> minutes<br>
+    "<%= race.name %>" -<a href="/users/<%= race.user.slug %>"><%= race.user.name %></a><br>
+    Ran on <%= race.date %>, within <%= race.time %> minutes<br>
   <% end %>
