@@ -3,8 +3,8 @@
 <% end %>
 
   <h2><%= @user.name %>'s 5k Races</h2>
-  <ol><% @user.races.each do |race| %>
-    <li>I ran a 5k race on <%= race.date %> within <%= race.time %> minutes at <a href="/locations/<%= race.city.slug %>"><%= race.city.name %></a><br>
-      I received <%= race.food %> at the end of the race.</li>
+  <% @user.races.each do |race| %>
+    I ran a 5k race on <%= race.date %> within <%= race.time %> minutes.  The race was located in <a href="/locations/<%= race.city.slug %>"><%= race.city.name %>, <%= race.city.state %></a><br>
+      I received <%= race.food %> at the end of the race.  They provided <%= race.clothing %>.
       <a href="/races/<%= race.id %>">Edit or delete</a>
-    <% end %></ol>
+    <% end %>
