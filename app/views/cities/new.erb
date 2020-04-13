@@ -2,16 +2,14 @@
   <%= flash[:message] %>
 <% end %>
 
-<center><h2>Add a new city</h2>
+<center><h3>Add a New City:</h3>
 
 <form action="/cities" method="post">
 
-  <label for="new_city">Add a new city:</label>
-  <br></br>
-  City: <input type="text" name="city[name]">
-  State: <input type="text" name="city[state]">
+  City: <input type="text" name="city[name]">*
+  State: <input type="text" name="city[state]">*
   <br></br>
   *Required fields
   <br></br>
-  <input type="submit" id="submit" value="Add City">
+  <input type="submit" id="submit" value="Add City" style="height:60px; width:100px">
 </form></center>
