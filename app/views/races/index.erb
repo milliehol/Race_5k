@@ -2,5 +2,5 @@
 
   <% @races.each do |race| %>
     "<%= race.name %>" -<a href="/users/<%= race.user.slug %>"><%= race.user.name %></a><br>
-     <a href="/cities/<%= race.city.slug %>"><%= race.city.name %>, <%= race.city.state %></a>
+     <a href="/cities/<%= race.city.slug %>"><%= race.city.name %>, <%= race.city.state %></a><br><br>
     <% end %>
