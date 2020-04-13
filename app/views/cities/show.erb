@@ -10,5 +10,4 @@
   <% @city.races.each do |race| %>
     "<%= race.food %>" -<a href="/users/<%= race.user.slug %>"><%= race.user.username %></a><br>
     <%= race.date %>, <%= race.time %> minutes<br>
-  
-    <% end %>
+  <% end %>
