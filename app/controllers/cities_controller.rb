@@ -24,10 +24,10 @@ class CitiesController < ApplicationController
     @city = @user.cities.build(params[:city])
     if @city.valid?
       @city.save
-      flash[:message] = "Successfully added race."
+      flash[:message] = "Successfully added city."
       redirect "/cities"
     else
-      flash[:message] = "Race was invalid. Please try again."
+      flash[:message] = "City was invalid. Please try again."
       redirect '/cities/new'
     end
   end
