@@ -1,6 +1,6 @@
 <h2>All 5k Races</h2>
 
-  <ul><% @races.each do |race| %>
-    <li>"<%= race.name %>" -<a href="/users/<%= race.user.slug %>"><%= race.user.username %></a><br>
-    At <a href="/cities/<%= race.city.slug %>"><%= race.city.name %></a></li>
-    <% end %></ul>
+  <% @races.each do |race| %>
+    "<%= race.name %>" -<a href="/users/<%= race.user.slug %>"><%= race.user.name %></a><br>
+     <a href="/cities/<%= race.city.slug %>"><%= race.city.name %>, <%= race.city.state %></a>
+    <% end %>
