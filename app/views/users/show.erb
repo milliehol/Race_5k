@@ -6,5 +6,5 @@
   <% @user.races.each do |race| %>
     I ran a 5k race on <%= race.date %> within <%= race.time %> minutes. &nbsp The race was located in <a href="/locations/<%= race.city.slug %>"><%= race.city.name %>, <%= race.city.state %></a>.<br>&nbsp
       I received <%= race.food %> at the end of the race.  &nbsp They provided a <%= race.clothing %>.&nbsp
-      <a href="/races/<%= race.id %>">Edit or delete</a>
+      <a href="/races/<%= race.id %>">Edit or delete</a><br><br>
     <% end %>

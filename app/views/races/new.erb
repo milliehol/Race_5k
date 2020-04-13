@@ -24,7 +24,7 @@
   <label for="city">Choose a city:</label>
   <br></br>
   <% @cities.each do |city| %>
-    <input type="radio" name="race[city_id]" value="<%= city.id %>"><%= city.name %>
+    <input type="radio" name="race[city_id]" value="<%= city.id %>"><%= city.name %>, <%= city.state %>
   <% end %>
   <br></br>
   <label for="new_city">If your city is not listed, add a new one:</label>
