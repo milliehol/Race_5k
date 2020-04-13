@@ -1,16 +1,22 @@
-<h1>Edit your race here</h1>
+<h1>Edit your Race here</h1>
 
 <form action="/races/<%= @race.id %>" method="post">
+  <label for="date">Name*</label>
+  <input type="text" name="name" value="<%= @race.name %>">
+  <br></br>
   <label for="date">Date*</label>
   <input type="text" name="date" value="<%= @race.date %>">
   <br></br>
   <label for="time">Time*</label>
   <input type="text" name="time" value="<%= @race.time %>">
   <br></br>
-  <label for="food">Food served at race</label>
+  <label for="food">Food served at this race</label>
   <input type="text" name="food" value="<%= @race.food %>">
+  <br></br>
+  <label for="food">Clothin provided at this race</label>
+  <input type="text" name="clothing" value="<%= @race.clothing %>">
   <br></br>
   *Required fields
   <br></br>
-  <input type="submit" id="submit" value="Edit Race">
+  <input type="submit" id="submit" value="Edit Race" style="height:60px; width:100px">
 </form>

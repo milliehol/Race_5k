@@ -3,8 +3,8 @@
 <% end %>
 
 <h2><%= @race.user.name%>'s race:</h2>
-<%= @race.date %> race ran in <%= @race.time %> minutes at <%= @race.city.name %></a><br>
-    "<%= @race.food %>"<br>
+<%= @race.name %> race ran in <%= @race.time %>minutes at <%= @race.city.name %> on <%= @race.date %></a><br>
+    "<%= @race.food %> was served and <%= @race.clothing %> were provided."<br>
 
 <br></br>
 
@@ -14,5 +14,5 @@
 
   <form action="/races/<%= @race.id %>" method="post">
     <input type="hidden" id="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Race">
+    <input type="submit" value="Delete Race" style="height:60px; width:100px">
   </form>
