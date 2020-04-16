@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_secure_password
   validates_presence_of :username, :email
   validates :email, :username, uniqueness: true
-  validate :is_email_available?, :is_username_available?
+  #validate :is_email_available?, :is_username_available?
 
   def slug
     self.username.downcase.gsub(" ","-")
