@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  #renders login form
   get '/login' do
     if is_logged_in?
       redirect '/races'
@@ -8,6 +9,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #receives the data(params) from the login form
   post '/login' do
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
@@ -19,6 +21,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #clears session hash
   get '/logout' do
     if is_logged_in?
       session.clear
@@ -26,6 +29,7 @@ class UsersController < ApplicationController
     redirect '/'
   end
 
+  #sign up
   get '/signup' do
     if is_logged_in?
       redirect '/races'
@@ -34,9 +38,9 @@ class UsersController < ApplicationController
     end
   end
 
+  #post sign up route that receives input data from user
   post '/signup' do
     @user = User.new(params)
-    binding.pry
     if @user.save
       session[:user_id] = @user.id
       redirect '/races'
@@ -46,6 +50,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #users show route, shows "My races" when click on menu item
   get '/users/:slug' do
     if is_logged_in?
       @user = User.find_by_slug(params[:slug])
