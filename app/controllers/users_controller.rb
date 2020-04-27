@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       flash[:message] = "Welcome back #{@user.name}."
       redirect '/races'
     else
-      flash[:message] = "Invalid username or password."
+      flash[:error] = "Invalid username or password."
       redirect '/login'
     end
   end
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect '/races'
     else
-      flash[:message] = @user.errors.full_messages.join(", ")
+      flash[:error] = @user.errors.full_messages.join(", ")
       redirect '/signup'
     end
   end
