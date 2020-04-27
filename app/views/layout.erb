@@ -5,11 +5,11 @@
     <title>5k Race Tracker</title>
   </head>
  <center><body>
-   <% if flash.has?(:error) %>
+   <% if flash(:error) %>
    <h3 style="color:red;"><%= flash[:error] %></h3>
   <% end %>
    
-     <% if flash.has?(:message) %>
+     <% if flash(:message) %>
    <h3><%= flash[:message] %></h3>
   <% end %>
    
