@@ -27,7 +27,7 @@ class CitiesController < ApplicationController
       flash[:message] = "Successfully added city."
       redirect "/cities"
     else
-      flash[:message] = "City was invalid. Please try again."
+      flash[:error] = "City was invalid. Please try again."
       redirect '/cities/new'
     end
   end
