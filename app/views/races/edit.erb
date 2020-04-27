@@ -1,6 +1,7 @@
 <h2>Edit your Race here</h2>
 
 <form action="/races/<%= @race.id %>" method="post">
+ <input type="hidden" name="_method" value="patch">
   <label for="date">Name*</label>
   <input type="text" name="name" value="<%= @race.name %>">
   <br></br>
