@@ -5,6 +5,9 @@
     <title>5k Race Tracker</title>
   </head>
  <center><body>
+   <% if flash.has?(:message) %>
+  <%= flash[:message] %>
+  <% end %>
      <a href="/">Home</a>&nbsp
        <% if is_logged_in? %>
       <a href="/races">All Races</a>&nbsp
