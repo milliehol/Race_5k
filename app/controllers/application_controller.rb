@@ -1,5 +1,4 @@
 require './config/environment'
-require 'rack-flash'
 
 class ApplicationController < Sinatra::Base
 
@@ -9,7 +8,7 @@ class ApplicationController < Sinatra::Base
       enable :sessions
     #sets a session secret for an extra layer of security
       set :session_secret, "secret"
-      use Rack::Flash, sweep: true
+      register Sinatra::Flash
     end
 
   get '/' do
