@@ -20,16 +20,24 @@ class CitiesController < ApplicationController
   end
   
   post '/cities' do
-    @user = User.find(session[:user_id])
-    @city = @user.cities.build(params[:city])
-    if @city.valid?
-      @city.save
-      flash[:message] = "Successfully added city."
-      redirect "/cities"
+    if is_logged_in?
+      
+    #@user = User.find(session[:user_id])
+      @city = City.create(params[:city])
+    #@city = @user.cities.build(params[:city])
+      if @city.valid?
+        @city.save
+        flash[:message] = "Successfully added city."
+        redirect "/cities"
+      else
+        flash[:error] = "City was invalid. Please try again."
+        redirect '/cities/new'
+      end
+      
     else
-      flash[:error] = "City was invalid. Please try again."
-      redirect '/cities/new'
+       redirect '/'
     end
+      
   end
   
 
