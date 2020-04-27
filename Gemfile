@@ -13,7 +13,7 @@ gem 'rspec'
 gem 'rack-test'
 gem 'sinatra-twitter-bootstrap', :require => 'sinatra/twitter-bootstrap'
 gem 'capybara'
-gem 'rack-flash3'
 gem 'bcrypt'
 gem 'require_all'
+gem 'sinatra-flash'
 
