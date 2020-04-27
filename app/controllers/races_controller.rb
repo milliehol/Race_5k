@@ -27,7 +27,7 @@ class RacesController < ApplicationController
       if current_user == @race.user
         erb :'races/show'
       else
-        flash[:message] = "You do not have permission to edit or delete this race."
+        flash[:error] = "You do not have permission to edit or delete this race."
         redirect "/users/#{@race.user.slug}"
       end
     else
@@ -42,7 +42,7 @@ class RacesController < ApplicationController
       if current_user == @race.user
         erb :'races/edit'
       else
-        flash[:message] = "You do not have permission to edit or delete this race."
+        flash[:error] = "You do not have permission to edit or delete this race."
         redirect "/users/#{@race.user.slug}"
       end
     else
@@ -63,7 +63,7 @@ class RacesController < ApplicationController
       flash[:message] = "Successfully added race."
       redirect "/users/#{@user.slug}"
     else
-      flash[:message] = "Race was invalid. Please try again."
+      flash[:error] = "Race was invalid. Please try again."
       redirect '/races/new'
     end
   end
