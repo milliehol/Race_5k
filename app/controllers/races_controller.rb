@@ -69,7 +69,7 @@ class RacesController < ApplicationController
   end
 
 #updates race if logged in
-  post '/races/:id' do
+  patch '/races/:id' do
     @race = Race.find(params[:id])
     @race.update(date: params[:date], time: params[:time], food: params[:food], clothing: params[:clothing])
     flash[:message] = "Successfully updated race."
