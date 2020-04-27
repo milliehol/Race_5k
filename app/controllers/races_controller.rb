@@ -1,5 +1,6 @@
 class RacesController < ApplicationController
 
+  #displays all races
   get '/races' do
     if is_logged_in?
       @races = Race.all
@@ -9,6 +10,7 @@ class RacesController < ApplicationController
     end
   end
 
+  #renders new page
   get '/races/new' do
     if is_logged_in?
       @cities = City.all
@@ -18,6 +20,7 @@ class RacesController < ApplicationController
     end
   end
 
+  #shows races per user if logged in
   get '/races/:id' do
     if is_logged_in?
       @race = Race.find(params[:id])
@@ -32,6 +35,7 @@ class RacesController < ApplicationController
     end
   end
 
+  #renders edit page
   get '/races/:id/edit' do
     if is_logged_in?
       @race = Race.find(params[:id])
@@ -67,7 +71,7 @@ class RacesController < ApplicationController
 #updates race if logged in
   post '/races/:id' do
     @race = Race.find(params[:id])
-    @race.update(date: params[:date], time: params[:time], food: params[:food])
+    @race.update(date: params[:date], time: params[:time], food: params[:food], clothing: params[:clothing])
     flash[:message] = "Successfully updated race."
     redirect "/users/#{@race.user.slug}"
   end
