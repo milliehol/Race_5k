@@ -13,6 +13,7 @@
 <br></br>
 
   <form action="/races/<%= @race.id %>" method="post">
+        <! –– overrides post method to delete ––>
     <input type="hidden" id="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Race" style="height:60px; width:100px">
   </form>
