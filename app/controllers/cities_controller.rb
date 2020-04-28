@@ -10,6 +10,7 @@ class CitiesController < ApplicationController
     end
   end
   
+  #renders new form for creating a new city
    get '/cities/new' do
     if is_logged_in?
       @cities = City.all
@@ -19,6 +20,7 @@ class CitiesController < ApplicationController
     end
   end
   
+  #saves new city if logged in and valid city according to model
   post '/cities' do
     if is_logged_in?
       
