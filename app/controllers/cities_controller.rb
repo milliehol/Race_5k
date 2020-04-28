@@ -22,9 +22,7 @@ class CitiesController < ApplicationController
   post '/cities' do
     if is_logged_in?
       
-    #@user = User.find(session[:user_id])
       @city = City.create(params[:city])
-    #@city = @user.cities.build(params[:city])
       if @city.valid?
         @city.save
         flash[:message] = "Successfully added city."
